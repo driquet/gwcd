@@ -12,9 +12,13 @@ This script can be used to :
 
 Usage
 -----
+
+::
+
     $ python gwcd.py [OPTIONS] <gwc file>
 
-Options are:
+Options are::
+
     -h, --help       show this help message and exit
     --output OUTPUT  Output directory where gwcd will store extracted data
     --lua            Extract compiled lua file
