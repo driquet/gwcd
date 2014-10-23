@@ -60,7 +60,7 @@ class GWCDecompiler:
         nb_objects = self.reader.read('ushort')
         objects = []
 
-        for i in xrange(nb_objects):
+        for i in range(nb_objects):
             obj_id = self.reader.read('ushort')
             obj_addr = self.reader.read('int')
             objects.append((obj_id, obj_addr))
@@ -167,21 +167,21 @@ if __name__ == '__main__':
     if args.output:
         dobj.set_output(args.output)
         if not os.path.isdir(args.output):
-            print "creating directory %s" % args.output
+            print("creating directory %s" % args.output)
             os.makedirs(args.output)
 
     if args.lua or args.all:
-        print "luac file extracted: %s" % dobj.write_lua_bytecode()
+        print("luac file extracted: %s" % dobj.write_lua_bytecode())
 
     if args.completion or args.all:
-        print "completion code: %s" % dobj.cartridge_data['header']['completion_code']
+        print("completion code: %s" % dobj.cartridge_data['header']['completion_code'])
 
     if args.media or args.all:
-        print "extracting media from %s" % args.input
+        print("extracting media from %s" % args.input)
         for media in dobj.write_media_files():
-            print " - extracted: %s" % media
+            print(" - extracted: %s" % media)
 
     if args.verbose or args.all:
-        print "relative data about the cartridge"
+        print("relative data about the cartridge")
         for key, value in dobj.cartridge_data['header'].items():
-            print " - %s: %s" % (key, value)
+            print(" - %s: %s" % (key, value))
