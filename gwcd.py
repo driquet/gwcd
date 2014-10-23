@@ -3,7 +3,7 @@ File: gwcd.py
 Author: Damien Riquet
 Email: d.riquet@gmail.com
 Description: Decompile a .gwc file and extract data from it (compiled lua file, media files and so on)
-    How is formated a gwc file: https://github.com/WFoundation/WF.Compiler
+    How is formatted a gwc file: https://github.com/WFoundation/WF.Compiler
 """
 
 
