@@ -6,6 +6,7 @@ is formatted [1], we can read the file in binary mode, extracting data along the
 reading.
 
 This script can be used to :
+
 - retrieve data related to the Wherigo (included the completion code),
 - extract the compiled Lua file (describing the scenario of the cartridge),
 - extract media files.
