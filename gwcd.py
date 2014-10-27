@@ -174,7 +174,10 @@ if __name__ == '__main__':
         print("luac file extracted: %s" % dobj.write_lua_bytecode())
 
     if args.completion or args.all:
-        print("completion code: %s" % dobj.cartridge_data['header']['completion_code'])
+        print("completion code: %s (full: %s)" % (
+            dobj.cartridge_data['header']['completion_code'][:15],
+            dobj.cartridge_data['header']['completion_code']
+        ))
 
     if args.media or args.all:
         print("extracting media from %s" % args.input)

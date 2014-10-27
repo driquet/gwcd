@@ -10,13 +10,13 @@ import struct
 import binascii
 
 type_names = {
-    'byte'   : 'b',
-    'short'  : 'h',
-    'ushort' : 'H',
-    'int'    : 'i',
-    'uint'   : 'I',
-    'long'   : 'l',
-    'double' : 'd',
+    'byte'   : '<b',
+    'short'  : '<h',
+    'ushort' : '<H',
+    'int'    : '<i',
+    'uint'   : '<I',
+    'long'   : '<q',
+    'double' : '<d',
 }
 
 
@@ -40,6 +40,7 @@ class GWCReader:
 
         type_format = type_names[type_name]
         type_size = struct.calcsize(type_format)
+        print('read(%s) expected size: %d' % (type_name, type_size))
         value = self.file.read(type_size)
         if type_size != len(value):
             raise GWCReaderEOFException
