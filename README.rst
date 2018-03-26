@@ -28,6 +28,30 @@ Options are::
     --verbose, -v    Show all data related to the cartridge
     --all            Do everything
 
+---------------------------------------------
+
+Dockerized version
+------------------
+For running the script in any environment that supports docker containers
+
+Building image
+--------------
+::
+
+    $ docker build -t mrummuka/gwcd .
+    
+Running gwcd from container
+---------------------------
+
+::
+
+    $ docker run --rm -v /path/to/wigocontainerdir:/data mrummuka/gwcd:latest
+
+.. note:: Dockerized version of gwcd currently assumes that wherigo container is found from /path/to/wigocontainerdir/ (can be changed) named as **wigo.gwc** (cannot be changed)
+
+
+
+
 Licence
 -------
 BSD Licence. See LICENCE file.
